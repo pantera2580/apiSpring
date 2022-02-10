@@ -1,16 +1,15 @@
 package com.mec.mundoDisney.model;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import lombok.Data;
+
+@Data
 @Entity
-@Table(name="personajes")
+@Table(name="personaje")
 public class Personaje implements Serializable{
 	/**
 	 * Entidad Personaje
@@ -20,6 +19,7 @@ public class Personaje implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idPersonaje;
+	
 	
 	private String imagen;
 	
@@ -34,54 +34,11 @@ public class Personaje implements Serializable{
 	
 	@Column(nullable = false, length = 512)
 	String historia;
-
-	public long getIdPersonaje() {
-		return idPersonaje;
-	}
-
-	public void setIdPersonaje(long idPersonaje) {
-		this.idPersonaje = idPersonaje;
-	}
-
-	public String getImagen() {
-		return imagen;
-	}
-
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public int getEdad() {
-		return edad;
-	}
-
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
-
-	public int getPeso() {
-		return peso;
-	}
-
-	public void setPeso(int peso) {
-		this.peso = peso;
-	}
-
-	public String getHistoria() {
-		return historia;
-	}
-
-	public void setHistoria(String historia) {
-		this.historia = historia;
-	}
 	
-	
+	@ManyToMany
+	@JoinTable(
+	name = "personaje_pelicula", 
+	joinColumns = @JoinColumn(name = "id_personaje"	), 
+	inverseJoinColumns = @JoinColumn(name = "id_pelicula"))
+	private List<Pelicula> peliculas;
 }
