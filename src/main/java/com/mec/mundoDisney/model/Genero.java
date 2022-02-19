@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
@@ -24,6 +25,7 @@ public class Genero implements Serializable {
 	@Column(nullable = false, length = 50)
 	private String nombre;
 	
+	@NotNull
 	private String imagen;
 	
 	@ManyToMany(mappedBy = "generos")

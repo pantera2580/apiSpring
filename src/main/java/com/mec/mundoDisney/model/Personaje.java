@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
@@ -20,7 +21,7 @@ public class Personaje implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idPersonaje;
 	
-	
+	@NotNull
 	private String imagen;
 	
 	@Column(nullable = false, length = 50)

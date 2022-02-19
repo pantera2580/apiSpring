@@ -12,9 +12,19 @@ import com.mec.mundoDisney.repository.PersonajeDao;
 @Service
 public class PersonajeService {
 	@Autowired()
-	PersonajeDao personajedao;
+	PersonajeDao personajeDao;
 	
 	public List<Personaje> listarPersonajes() {
-		return (ArrayList<Personaje>) this.personajedao.findAll();
+		return (ArrayList<Personaje>) this.personajeDao.findAll();
 	}
+	
+	public boolean existsById(long idPersonaje) {
+		return personajeDao.existsById(idPersonaje);
+	}
+	
+	
+	public void delete(long idPersonaje) {
+		personajeDao.deleteById(idPersonaje);
+	}
+	
 }

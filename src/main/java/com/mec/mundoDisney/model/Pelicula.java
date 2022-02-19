@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
@@ -31,6 +32,7 @@ public class Pelicula implements Serializable {
 	@Column(nullable = false)
 	private int calificacion;
 	
+	@NotNull
 	private String imagen;
 	
 	@ManyToMany(mappedBy = "peliculas")
