@@ -43,6 +43,12 @@ public class Personaje implements Serializable{
 	public Personaje() {
 		super();
 	}
+	
+	
+	public Personaje(String nombre) {
+		super();
+		this.nombre = nombre;
+	}
 
 	public Personaje(String imagen, String nombre, int edad, int peso, String historia,
 			Set<Pelicula> peliculas) {

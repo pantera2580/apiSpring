@@ -1,6 +1,6 @@
-package com.mec.mundoDisney.dto;
+package com.mec.mundoDisney.dto.custom;
 
-public interface PersonajeDTOSimple {
+public interface PersonajeSimple {
 	
 //	public PersonajeDTOSimple(String imagen, String nombre) {
 //		this.imagen = imagen;

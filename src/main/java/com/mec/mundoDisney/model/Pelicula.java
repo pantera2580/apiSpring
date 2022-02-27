@@ -2,7 +2,7 @@ package com.mec.mundoDisney.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -23,7 +23,7 @@ public class Pelicula implements Serializable {
 	@Column(nullable = false, length = 50)
 	private String titulo;
 	
-	@Column(columnDefinition = "DATE")
+	@Column(columnDefinition = "DATE DEFAULT CURRENT_DATE")
 	private Date fecha;
 	
 	private int calificacion;
@@ -34,7 +34,7 @@ public class Pelicula implements Serializable {
 	        CascadeType.PERSIST, 
 	        CascadeType.MERGE
 	    })
-	private List<Personaje> personajes;
+	private Set<Personaje> personajes;
 	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = {
 	        CascadeType.PERSIST, 
@@ -44,19 +44,21 @@ public class Pelicula implements Serializable {
 	name = "pelicula_genero", 
 	joinColumns = @JoinColumn(name = "id_pelicula"	), 
 	inverseJoinColumns = @JoinColumn(name = "id_genero"))
-	private List<Genero> generos;
+	private Set<Genero> generos;
 
 	public Pelicula() {
 		super();
+		this.fecha = new Date();
 	}
 
 	public Pelicula(String titulo) {
 		super();
 		this.titulo = titulo;
+		this.fecha = new Date();
 	}
 
-	public Pelicula(String titulo, Date fecha, int calificacion, String imagen, List<Personaje> personajes,
-			List<Genero> generos) {
+	public Pelicula(String titulo, Date fecha, int calificacion, String imagen, Set<Personaje> personajes,
+			Set<Genero> generos) {
 		super();
 		this.titulo = titulo;
 		this.fecha = fecha;
@@ -67,7 +69,7 @@ public class Pelicula implements Serializable {
 	}
 
 	public Pelicula(long idPelicula, String titulo, Date fecha, int calificacion, String imagen,
-			List<Personaje> personajes, List<Genero> generos) {
+			Set<Personaje> personajes, Set<Genero> generos) {
 		super();
 		this.idPelicula = idPelicula;
 		this.titulo = titulo;
@@ -118,19 +120,19 @@ public class Pelicula implements Serializable {
 		this.imagen = imagen;
 	}
 
-	public List<Personaje> getPersonajes() {
+	public Set<Personaje> getPersonajes() {
 		return personajes;
 	}
 
-	public void setPersonajes(List<Personaje> personajes) {
+	public void setPersonajes(Set<Personaje> personajes) {
 		this.personajes = personajes;
 	}
 
-	public List<Genero> getGeneros() {
+	public Set<Genero> getGeneros() {
 		return generos;
 	}
 
-	public void setGeneros(List<Genero> generos) {
+	public void setGeneros(Set<Genero> generos) {
 		this.generos = generos;
 	}
 	
