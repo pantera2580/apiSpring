@@ -25,7 +25,7 @@ public class PeliculaDTO {
 	
 	private String fecha;
 	@Min(0)
-	@Max(10)
+	@Max(5)
 	private int calificacion;
 	
 	@NotBlank(message = "El campo imagen no puede estar vacio")

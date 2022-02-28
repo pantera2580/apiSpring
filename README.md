@@ -11,21 +11,21 @@ Api Mundo Disney
 
 ## 1. Base de Datos
 **Realizado**  
-Personaje
+### Personaje
 + Imagen.
 + Nombre.
 + Edad.
 + Peso.
 + Historia.
-+ Películas o series asociadas.  
-Pelicula
++ Películas o series asociadas.
+### Pelicula
 + Imagen.
 + Título.
 + Fecha de creación.
 + Calificación (del 1 al 5).
-+ Personajes asociados.  
-Genero
-Nombre.
++ Personajes asociados.
+### Genero
++ Nombre.
 + Imagen.
 + Películas o series asociadas.
 
@@ -96,7 +96,9 @@ utilización de algún servicio de terceros como SendGrid.
 ## Documentación
 **Realizado**  
 Es deseable documentar los endpoints utilizando alguna herramienta como Postman o Swagger.
+
 ## Tests
+**No implementado todavia**  
 De forma opcional, se podrán agregar tests de los diferentes endpoints de la APP, verificando
 posibles escenarios de error:
 + Campos faltantes o con un formato inválido en BODY de las peticiones
