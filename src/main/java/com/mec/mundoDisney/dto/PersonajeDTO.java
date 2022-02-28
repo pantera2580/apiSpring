@@ -37,6 +37,13 @@ public class PersonajeDTO {
 	public PersonajeDTO() {
 		super();
 	}
+	
+	
+	public PersonajeDTO(@NotBlank String nombre) {
+		super();
+		this.nombre = nombre;
+	}
+
 
 	public PersonajeDTO(@NotBlank String imagen, @NotBlank String nombre, @Min(0) int edad, @Min(0) int peso,
 			@NotBlank String historia, @NotEmpty List<String> peliculas) {

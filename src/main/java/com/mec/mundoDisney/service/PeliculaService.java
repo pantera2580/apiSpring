@@ -52,12 +52,11 @@ public class PeliculaService implements IPeliculaService{
 			Set<Personaje> personajes = new HashSet<>();
 			// verifica si los personajes asociados existen, sino los crea
 			for (String nombre : peliculaDTO.getPersonajes()) {
-				Personaje personaje = personajeRepository.findByNombre(nombre).get();
-				if (personaje != null) {
-					personajes.add(personaje);
+				if (personajeRepository.existsByNombre(nombre)) {
+					personajes.add(personajeRepository.findByNombre(nombre).get());
 				} else {
 					// crear entidad
-					personaje = new Personaje(nombre);
+					Personaje personaje = new Personaje(nombre);
 					// salvar entidad
 					personajeRepository.save(personaje);
 					// agregar a la lista de peliculas relacionadas
@@ -67,13 +66,12 @@ public class PeliculaService implements IPeliculaService{
 			// verifica si los generos asociados existen, sino los crea
 			Set<Genero> generos = new HashSet<>();
 			for (String nombre : peliculaDTO.getGeneros()) {
-				Genero genero = generoRepository.findByNombre(nombre);
-				if (genero != null) {
+				if (generoRepository.existsByNombre(nombre)) {
 					// agrega la entidad a la lista de personajes relacionados
-					generos.add(genero);
+					generos.add(generoRepository.findByNombre(nombre));
 				} else {
 					// crear entidad
-					genero = new Genero(nombre);
+					Genero genero = new Genero(nombre);
 					// salvar entidad
 					generoRepository.save(genero);
 					// agregar a la lista de peliculas relacionadas
@@ -132,12 +130,11 @@ public class PeliculaService implements IPeliculaService{
 			Set<Personaje> personajes = new HashSet<>();
 			// verifica si los personajes asociados existen, sino los crea
 			for (String nombre : peliculaDTO.getPersonajes()) {
-				Personaje personaje = personajeRepository.findByNombre(nombre).get();
-				if (personaje != null) {
-					personajes.add(personaje);
+				if (personajeRepository.existsByNombre(nombre)) {
+					personajes.add(personajeRepository.findByNombre(nombre).get());
 				} else {
 					// crear entidad
-					personaje = new Personaje(nombre);
+					Personaje personaje = new Personaje(nombre);
 					// salvar entidad
 					personajeRepository.save(personaje);
 					// agregar a la lista de peliculas relacionadas
@@ -147,13 +144,12 @@ public class PeliculaService implements IPeliculaService{
 			// verifica si los generos asociados existen, sino los crea
 			Set<Genero> generos = new HashSet<>();
 			for (String nombre : peliculaDTO.getGeneros()) {
-				Genero genero = generoRepository.findByNombre(nombre);
-				if (genero != null) {
+				if (generoRepository.existsByNombre(nombre)) {
 					// agrega la entidad a la lista de personajes relacionados
-					generos.add(genero);
+					generos.add(generoRepository.findByNombre(nombre));
 				} else {
 					// crear entidad
-					genero = new Genero(nombre);
+					Genero genero = new Genero(nombre);
 					// salvar entidad
 					generoRepository.save(genero);
 					// agregar a la lista de peliculas relacionadas

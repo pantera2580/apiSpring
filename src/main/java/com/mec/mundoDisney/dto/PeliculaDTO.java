@@ -27,6 +27,7 @@ public class PeliculaDTO {
 	@Min(0)
 	@Max(10)
 	private int calificacion;
+	
 	@NotBlank(message = "El campo imagen no puede estar vacio")
 	private String imagen;
 	
