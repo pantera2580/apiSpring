@@ -37,7 +37,7 @@ Para especificar el término de búsqueda o filtros se deberán enviar como par�
 ● GET /characters?movies=idMovie
 
 7. Listado de Películas
-Deberá muestra solamente los campos imagen, título y fecha de creación.
+Muestra solamente los campos imagen, título y fecha de creación.
 El endpoint deberá ser:
 ● GET /movies
 
