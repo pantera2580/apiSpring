@@ -33,7 +33,8 @@ public interface IPeliculaService {
 
 		public void delete(long id) throws NoSuchElementException;
 		
-		public List<PeliculaSimpleDTO> findByOrderByTitulo(String order) throws NoSuchElementException;
+		public List<PeliculaSimpleDTO> findByOrderByFecha(String order) throws NoSuchElementException;
+
 		
 		
 }

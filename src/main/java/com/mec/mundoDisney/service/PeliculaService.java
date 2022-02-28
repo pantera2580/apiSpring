@@ -163,14 +163,14 @@ public class PeliculaService implements IPeliculaService{
 }
 
 	@Override
-	public List<PeliculaSimpleDTO> findByOrderByTitulo(String order) {
+	public List<PeliculaSimpleDTO> findByOrderByFecha(String order) {
 		List<PeliculaSimple> peliculas;
 		if(order.equals("ASC")) {
-			peliculas = peliculaRepository.findByOrderByTituloAsc().orElseThrow(() 
+			peliculas = peliculaRepository.findByOrderByFechaAsc().orElseThrow(() 
 					-> new NoSuchElementException(MessageFormat.format("PELICULA_TITLE_NOT_FOUND", order)));
 		}
 		else {
-			peliculas = peliculaRepository.findByOrderByTituloDesc().orElseThrow(() 
+			peliculas = peliculaRepository.findByOrderByFechaDesc().orElseThrow(() 
 					-> new NoSuchElementException(MessageFormat.format("PELICULA_TITLE_NOT_FOUND", order)));
 		}
 		List<PeliculaSimpleDTO> peliculaSimpleDTOs = new ArrayList<>(); 

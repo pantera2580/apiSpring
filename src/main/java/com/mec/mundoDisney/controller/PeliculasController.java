@@ -52,7 +52,7 @@ public class PeliculasController {
 			return new ResponseEntity<>(generoDTO, HttpStatus.OK);
 		}
 		if(sort.equals("ASC") || sort.equals("DESC")) {
-			List<PeliculaSimpleDTO> peliculasSimpleDTO = peliculaService.findByOrderByTitulo(sort);
+			List<PeliculaSimpleDTO> peliculasSimpleDTO = peliculaService.findByOrderByFecha(sort);
 			return new ResponseEntity<>(peliculasSimpleDTO, HttpStatus.OK);
 		}
 		List<PeliculaSimpleDTO> peliculasDTO = peliculaService.findAllBy();

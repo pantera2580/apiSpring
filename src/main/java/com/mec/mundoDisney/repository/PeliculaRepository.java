@@ -20,10 +20,10 @@ public interface PeliculaRepository extends JpaRepository<Pelicula, Long>{
 	
 	public boolean existsByTitulo(String titulo);
 	
-	@Query(value = "select p.imagen as imagen, p.titulo as titulo, p.fecha as fecha from Pelicula p order by p.titulo asc")
-	public Optional<List<PeliculaSimple>> findByOrderByTituloAsc();
+	@Query(value = "select p.imagen as imagen, p.titulo as titulo, p.fecha as fecha from Pelicula p order by p.fecha asc")
+	public Optional<List<PeliculaSimple>> findByOrderByFechaAsc();
 	
-	@Query(value = "select p.imagen as imagen, p.titulo as titulo, p.fecha as fecha from Pelicula p order by p.titulo desc")
-	public Optional<List<PeliculaSimple>> findByOrderByTituloDesc();
+	@Query(value = "select p.imagen as imagen, p.titulo as titulo, p.fecha as fecha from Pelicula p order by p.fecha desc")
+	public Optional<List<PeliculaSimple>> findByOrderByFechaDesc();
 	
 }
