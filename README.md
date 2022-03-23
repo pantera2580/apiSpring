@@ -1,7 +1,7 @@
 # apiSpring
-Preaceleracion Alkemy  
-Practica Api restful con SpringBoot
-Api Mundo Disney
+Challenge Alkemy  
+Api Restful con Spring Boot  
+Mundo Disney
 ---
 **Documentacion**
 
